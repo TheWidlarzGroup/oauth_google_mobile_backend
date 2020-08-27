@@ -2,7 +2,7 @@ import * as Express from "express";
 import * as morgan from "morgan";
 
 const app = Express();
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 7004;
 
 if (process.env.MODE === "dev") {
   app.use(morgan("tiny"));
