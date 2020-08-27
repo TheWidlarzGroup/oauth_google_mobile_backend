@@ -37,4 +37,6 @@ To run PRODUCTION mode:
 
 - run `docker-compose up`
 
-# chmod u+x ./dev.sh
+### Useful docker commands:
+
+https://github.com/danielmark0116/docker-commands -> we can move it to TWG also 😃
