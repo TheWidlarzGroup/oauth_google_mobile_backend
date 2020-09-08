@@ -21,5 +21,7 @@ services:
       context: ./server
       dockerfile: Dockerfile
     restart: "always"
+    depends_on:
+      - "db"
     ports:
       - "${SERVER_PORT}:${SERVER_PORT}"
