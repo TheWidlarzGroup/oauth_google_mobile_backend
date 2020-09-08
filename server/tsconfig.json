@@ -9,10 +9,10 @@
     "outDir": "dist",
     "allowJs": true,
     "lib": ["dom", "es6"],
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["./*"]
-    }
+    "baseUrl": "./"
+    // "paths": {
+    //   "@/*": ["./*"]
+    // }
   },
   "exclude": ["node_modules", "dist"],
   "include": [

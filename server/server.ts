@@ -17,9 +17,9 @@ createConnection({
   database: process.env.POSTGRES_DB,
   synchronize: process.env.MODE === "dev", // should be off in prod
   logging: process.env.MODE === "dev",
-  entities: ["src/entity/**/*.ts"],
-  migrations: ["src/migration/**/*.ts"],
-  subscribers: ["src/subscriber/**/*.ts"],
+  entities: [path.join(__dirname, "src", "entity", "**", "*.entity.{ts,js}")],
+  migrations: ["./src/migration/**/*.{ts,js}"],
+  subscribers: ["./src/subscriber/**/*.{ts,js}"],
 })
   .then((conn) => {
     console.log("Connected with DB");
