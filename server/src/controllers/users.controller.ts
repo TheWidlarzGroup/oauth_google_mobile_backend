@@ -7,33 +7,49 @@ export const getUsers = async (
   res: Express.Response
 ) => {
   try {
-    console.log("trying to fetch users");
-
-    const repo = getRepository(User);
-
-    // const newUser = repo.create({
-    //   email: "mail@mail.com",
-    //   name: "JHohn DOe",
-    //   password_hash: "sdiof",
-    // });
-
-    const newUser = new User();
-
-    newUser.email = "mail.com@asd.oasd";
-    newUser.name = "John DOe";
-    newUser.password_hash = "sdfijsodifjoisdfj";
-
-    await repo.save(newUser);
-
-    console.log("users are fetched");
-
-    // const users = await getRepository(User).find();
+    const users = await getRepository(User).find();
 
     res.json({
-      users: [],
+      users,
+      success: true,
+      error: false,
+      msg: "Fetched all users",
     });
   } catch (e) {
-    console.log(e);
-    res.send("get all users error");
+    res.status(400).json({
+      msg: "Get all users error",
+      error: true,
+      success: false,
+      errorData: e,
+    });
+  }
+};
+
+export const createUser = async (
+  _req: Express.Request,
+  res: Express.Response
+) => {
+  try {
+    const newUser = getRepository(User).create({
+      email: "mail2@mail.com",
+      name: "JHohn DOe",
+      password_hash: "sdiof",
+    });
+
+    const output = await getRepository(User).save(newUser);
+
+    res.status(201).json({
+      user: output,
+      success: true,
+      error: false,
+      msg: "Created new user",
+    });
+  } catch (e) {
+    res.status(400).json({
+      msg: "Create user error",
+      error: true,
+      success: false,
+      errorData: e,
+    });
   }
 };
