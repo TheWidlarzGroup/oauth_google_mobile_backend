@@ -1,10 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn } from "typeorm";
 import { Length, IsEmail, IsNotEmpty } from "class-validator";
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn({ type: "uuid" })
-  id: number;
+  @PrimaryColumn("uuid", { generated: true })
+  id: string;
 
   @Column()
   @IsEmail()
