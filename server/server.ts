@@ -20,7 +20,7 @@ if (process.env.MODE === "dev") {
 
 app.get("/student_oauth_redirect", (req, res) => {
   // res.sendFile(path.join(__dirname, "../public", "test.html"));
-  res.status(200).send("")
+  res.status(200).type('html').send("")
 });
 
 app.get("/", (_: Express.Request, res: Express.Response) => {
