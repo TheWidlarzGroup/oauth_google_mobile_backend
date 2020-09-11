@@ -7,7 +7,7 @@ const port = process.env.PORT || 7004;
 
 app.use(
   "/.well-known",
-  Express.static("public", {
+  Express.static(path.join(__dirname, "../public"), {
     setHeaders: (res) => {
       res.type("application/json");
     },
@@ -25,5 +25,5 @@ app.get("/", (_: Express.Request, res: Express.Response) => {
 
 app.listen(port, () => {
   console.log("MODE: ", process.env.MODE);
-  console.log("Server run on port: ", port);
+  console.log("Server run on port: with AASA file ", port);
 });
