@@ -9,7 +9,8 @@ app.use(
   "/.well-known",
   Express.static(path.join(__dirname, "../public"), {
     setHeaders: (res) => {
-      res.type("application/json");
+      // res.type("application/json");
+      res.type("application/pkcs7-mime");
     },
   })
 );
