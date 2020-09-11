@@ -5,7 +5,14 @@ import * as path from "path";
 const app = Express();
 const port = process.env.PORT || 7004;
 
-// app.use(Express.static("public"));
+app.use(
+  "/.well-known",
+  Express.static("public", {
+    setHeaders: (res) => {
+      res.type("application/json");
+    },
+  })
+);
 
 if (process.env.MODE === "dev") {
   app.use(morgan("tiny"));
