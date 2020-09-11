@@ -1,0 +1,22 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appIDs": [ "59GLLQJV2Y.app.talentbay" ],
+                "appID": "59GLLQJV2Y.app.talentbay",
+                "components": [
+                    {
+                        "/": "/student_oauth_redirect",
+                        "?": { "token": "*" },
+                        "comment": "Matches any URL whose path starts with /student_oauth_redirect and which has a query item with name 'token' and any value"
+                    }
+                ],
+                "paths": [ "/student_oauth_redirect", "/student_oauth_redirect/*", "/student_oauth_redirect?" ]
+            }
+        ]
+    },
+    "webcredentials": {
+      "apps": [ "59GLLQJV2Y.app.talentbay" ]
+   }
+}

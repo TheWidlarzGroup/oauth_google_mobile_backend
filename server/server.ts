@@ -30,11 +30,26 @@ createConnection({
     console.log(reason);
   });
 
+app.use(
+  "/.well-known",
+  Express.static(path.join(__dirname, "../public"), {
+    setHeaders: (res) => {
+      res.type("application/json");
+      // res.type("application/pkcs7-mime");
+    },
+  })
+);
+
 if (process.env.MODE === "dev") {
   app.use(morgan("tiny"));
 }
 
 app.use("/api/users", UserRouter);
+
+app.get("/student_oauth_redirect", (req, res) => {
+  // res.sendFile(path.join(__dirname, "../public", "test.html"));
+  res.status(200).send("");
+});
 
 app.get("/", (_: Express.Request, res: Express.Response) => {
   res.sendFile(path.join(__dirname, "../public", "index.html"));
@@ -42,5 +57,5 @@ app.get("/", (_: Express.Request, res: Express.Response) => {
 
 app.listen(port, () => {
   console.log("MODE: ", process.env.MODE);
-  console.log("Server run on port: ", port);
+  console.log("Server run on port: with AASA file ", port);
 });
