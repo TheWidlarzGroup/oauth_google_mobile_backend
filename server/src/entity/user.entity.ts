@@ -8,6 +8,9 @@ export class User {
   id: string;
 
   @Column()
+  googleId: string;
+
+  @Column()
   @IsNotEmpty({ message: "The name is required" })
   name: string;
 
