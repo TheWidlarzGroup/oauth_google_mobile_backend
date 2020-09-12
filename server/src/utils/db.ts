@@ -9,7 +9,8 @@ export const connectToDb = () => {
     username: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.POSTGRES_DB,
-    synchronize: process.env.MODE === "dev", // should be off in prod
+    // synchronize: process.env.MODE === "dev", // should be off in prod
+    synchronize: true,
     logging: process.env.MODE === "dev",
     entities: [path.join(__dirname, "../entity", "**", "*.entity.{ts,js}")],
     migrations: [path.join(__dirname, "../migration", "**", "*.{ts,js}")],
