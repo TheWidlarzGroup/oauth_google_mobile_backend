@@ -14,7 +14,6 @@ export const initPassport = () => {
   passport.use(
     new Strategy(opts, async (jwt_payload, done) => {
       try {
-        console.log("veryfying");
         const user = await getRepository(User).findOne(jwt_payload.id);
 
         if (!user) {
@@ -36,10 +35,7 @@ export const initGoogleOAuth = () => {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL:
-          process.env.MODE === "prod"
-            ? "https://oauth.danielgrychtol.com/auth/google/callback"
-            : "http://localhost:7004/auth/google/callback",
+        callbackURL: process.env.GOOGLE_CALLBACK_URL,
       },
       async (_token, _tokenSecret, profile, done) => {
         try {

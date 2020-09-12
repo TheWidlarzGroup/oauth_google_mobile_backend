@@ -20,8 +20,10 @@ router.get(
   AuthController.handleOAuthRedirect
 );
 
+router.get("/oauth_redirect", AuthController.oauthRedirect);
+
 router.get("/login", (_req, res: Express.Response) => {
-  res.send("auth fail");
+  res.send("Auth fail");
 });
 
 // to be deleted

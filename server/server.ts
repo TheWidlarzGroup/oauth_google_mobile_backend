@@ -2,10 +2,11 @@ import "reflect-metadata";
 import * as Express from "express";
 import * as morgan from "morgan";
 import * as path from "path";
-import UserRouter from "./src/routes/users.routes";
-import AuthRouter from "./src/routes/auth.routes";
 import * as cors from "cors";
 import * as passport from "passport";
+import * as helmet from "helmet";
+import UserRouter from "./src/routes/users.routes";
+import AuthRouter from "./src/routes/auth.routes";
 import { initPassport, initGoogleOAuth } from "./src/utils/passport";
 import { connectToDb } from "./src/utils/db";
 
@@ -19,6 +20,7 @@ if (process.env.MODE === "dev") {
 connectToDb();
 
 app.use(cors());
+app.use(helmet());
 app.use(Express.json());
 app.use(passport.initialize());
 app.use(passport.session());

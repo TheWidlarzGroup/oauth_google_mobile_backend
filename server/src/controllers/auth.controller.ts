@@ -7,5 +7,10 @@ export const handleOAuthRedirect = (
 ) => {
   const token = generateJWTToken(req?.user?.id ?? "");
 
-  res.send("Authed with goodle " + token);
+  res.redirect("/auth/oauth_redirect?token=" + token);
+};
+
+export const oauthRedirect = (req: Express.Request, res: Express.Response) => {
+  console.log(req.query);
+  res.status(200).type("text/html").send("");
 };

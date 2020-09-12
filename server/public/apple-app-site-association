@@ -3,20 +3,20 @@
         "apps": [],
         "details": [
             {
-                "appIDs": [ "59GLLQJV2Y.app.talentbay" ],
-                "appID": "59GLLQJV2Y.app.talentbay",
+                "appIDs": [ "TEAMID.BUNDLEID" ],
+                "appID": "TEAMID.BUNDLEID",
                 "components": [
                     {
-                        "/": "/student_oauth_redirect",
+                        "/": "/path",
                         "?": { "token": "*" },
-                        "comment": "Matches any URL whose path starts with /student_oauth_redirect and which has a query item with name 'token' and any value"
+                        "comment": "Matches any URL whose path starts with /path and which has a query item with name 'token' and any value"
                     }
                 ],
-                "paths": [ "/student_oauth_redirect", "/student_oauth_redirect/*", "/student_oauth_redirect?" ]
+                "paths": [ "/path", "/path/*", "/path?" ]
             }
         ]
     },
     "webcredentials": {
-      "apps": [ "59GLLQJV2Y.app.talentbay" ]
+      "apps": [ "TEAMID.BUNDLEID" ]
    }
 }
