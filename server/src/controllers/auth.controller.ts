@@ -7,7 +7,8 @@ export const handleOAuthRedirect = (
 ) => {
   const token = generateJWTToken(req?.user?.id ?? "");
 
-  res.redirect("/auth/oauth_redirect?token=" + token);
+  // res.redirect("/auth/oauth_redirect?token=" + token);
+  res.redirect("/auth/oauth_redirect/" + token);
 };
 
 export const oauthRedirect = (req: Express.Request, res: Express.Response) => {
