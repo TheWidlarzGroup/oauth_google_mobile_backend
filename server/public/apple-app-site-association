@@ -14,8 +14,12 @@
                         "/": "/account_confirm/*",
                         "comment": "Any"
                     },
+                    {
+                        "/": "/auth/oauth_redirect/*",
+                        "comment": "Any"
+                    },
                 ],
-                "paths": [ "/path", "/path/*", "/path?", "/account_confirm/*" ]
+                "paths": [ "/path", "/path/*", "/path?", "/account_confirm/*", "/auth/oauth_redirect/*" ]
             }
         ]
     },
