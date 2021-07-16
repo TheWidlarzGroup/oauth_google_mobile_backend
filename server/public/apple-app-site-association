@@ -3,8 +3,7 @@
         "apps": [],
         "details": [
             {
-                "appIDs": [ "8X6AMHR5NU.com.twg.oauthreactnative" ],
-                "appID": "8X6AMHR5NU.com.twg.oauthreactnative",
+                "appIDs": [ "23QAX5XY7P.app.twg.oauth" ],
                 "components": [
                     {
                         "/": "/path",
@@ -12,23 +11,15 @@
                         "comment": "Matches any URL whose path starts with /path and which has a query item with name 'token' and any value"
                     },
                     {
-                        "/": "/",
+                        "/": "/account_confirm/*",
                         "comment": "Any"
                     },
-                    {
-                        "/": "/*",
-                        "comment": "Any"
-                    },
-                    {
-                        "/": "*",
-                        "comment": "Any"
-                    }
                 ],
-                "paths": [ "/path", "/path/*", "/path?", "*" ]
+                "paths": [ "/path", "/path/*", "/path?", "/account_confirm/*" ]
             }
         ]
     },
     "webcredentials": {
-      "apps": [ "8X6AMHR5NU.com.twg.oauthreactnative" ]
+      "apps": [ "23QAX5XY7P.app.twg.oauth" ]
    }
 }
