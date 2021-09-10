@@ -13,5 +13,5 @@ export const handleOAuthRedirect = (
 };
 
 export const oauthRedirect = (req: Express.Request, res: Express.Response) => {
-  res.sendFile(path.join(__dirname, "../../public", "oauth_redirect.html"));
+  res.sendFile(path.join(__dirname, "../../../public", "oauth_redirect.html"));
 };
