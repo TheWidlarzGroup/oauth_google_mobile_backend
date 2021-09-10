@@ -6,6 +6,10 @@ const router = Express.Router();
 
 router.get(
   "/google",
+  (req, res, next) => {
+    console.log("IN GOOGLE AUTH TRIGGER");
+    next();
+  },
   passport.authenticate("google", {
     scope: ["openid", "profile", "email"],
   })
@@ -13,15 +17,37 @@ router.get(
 
 router.get(
   "/google/callback",
+  (req, res, next) => {
+    console.log("IN GOOGLE AUTH callback");
+    next();
+  },
   passport.authenticate("google", {
     failureRedirect: "/auth/login",
     session: false,
   }),
+  (req, res, next) => {
+    console.log("IN GOOGLE AUTH callback after passport");
+    next();
+  },
   AuthController.handleOAuthRedirect
 );
 
-router.get("/oauth_redirect", AuthController.oauthRedirect);
-router.get("/oauth_redirect/:token", AuthController.oauthRedirect);
+router.get(
+  "/oauth_redirect",
+  (req, res, next) => {
+    console.log("IN auth controller");
+    next();
+  },
+  AuthController.oauthRedirect
+);
+router.get(
+  "/oauth_redirect/:token",
+  (req, res, next) => {
+    console.log("IN auth controller");
+    next();
+  },
+  AuthController.oauthRedirect
+);
 
 router.get("/login", (_req, res: Express.Response) => {
   res.send("Auth fail");
