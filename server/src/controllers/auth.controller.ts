@@ -7,7 +7,11 @@ export const handleOAuthRedirect = (
   res: Express.Response
 ) => {
   try {
+    console.log("in handleOAuthRedirect");
     const token = generateJWTToken(req?.user?.id ?? "");
+    console.log("token will ne:", token);
+
+    console.log("will call redirect");
 
     res.redirect("/auth/oauth_redirect/" + token);
   } catch (e) {
