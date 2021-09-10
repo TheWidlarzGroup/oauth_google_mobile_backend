@@ -1,29 +1,36 @@
 {
-    "applinks": {
-        "apps": [],
-        "details": [
-            {
-                "appIDs": [ "23QAX5XY7P.app.twg.oauth" ],
-                "components": [
-                    {
-                        "/": "/path",
-                        "?": { "token": "*" },
-                        "comment": "Matches any URL whose path starts with /path and which has a query item with name 'token' and any value"
-                    },
-                    {
-                        "/": "/account_confirm/*",
-                        "comment": "Any"
-                    },
-                    {
-                        "/": "/auth/oauth_redirect/*",
-                        "comment": "Any"
-                    },
-                ],
-                "paths": [ "/path", "/path/*", "/path?", "/account_confirm/*", "/auth/oauth_redirect/*" ]
-            }
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "23QAX5XY7P.app.twg.oauth"
+        ],
+        "components": [
+          {
+            "/": "/path",
+            "?": {
+              "token": "*"
+            },
+            "comment": "Matches any URL whose path starts with /path and which has a query item with name 'token' and any value"
+          },
+          {
+            "/": "/account_confirm/*",
+            "comment": "Any"
+          }
+        ],
+        "paths": [
+          "/path",
+          "/path/*",
+          "/path?",
+          "/account_confirm/*"
         ]
-    },
-    "webcredentials": {
-      "apps": [ "23QAX5XY7P.app.twg.oauth" ]
-   }
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "23QAX5XY7P.app.twg.oauth"
+    ]
+  }
 }
