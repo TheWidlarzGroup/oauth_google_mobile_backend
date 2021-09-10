@@ -7,13 +7,8 @@
     <title>React Native OAuth</title>
     <script>
       window.onload = function () {
-        var url = window.location.href;
-        var token = url.split("oauth_redirect/")[1];
-
-        console.log({
-          token: token,
-          href: "oauthrn://oauth_redirect?token=" + token,
-        });
+        // var url = window.location.href;
+        // var token = url.split("oauth_redirect/")[1];
 
         window.location.href = "oauthrn://oauth_redirect?token=123123123123123";
       };
