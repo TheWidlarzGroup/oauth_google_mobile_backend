@@ -33,7 +33,7 @@ router.get(
 );
 
 router.get(
-  "/oauth_redirect",
+  "/QWERTYoauth_redirect",
   (req, res, next) => {
     console.log("IN auth controller");
     next();
@@ -41,7 +41,7 @@ router.get(
   AuthController.oauthRedirect
 );
 router.get(
-  "/oauth_redirect/:token",
+  "/QWERTYoauth_redirect/:token",
   (req, res, next) => {
     console.log("IN auth controller");
     next();
