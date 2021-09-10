@@ -13,7 +13,10 @@ export const handleOAuthRedirect = (
 
     console.log("will call redirect");
 
-    res.redirect("/auth/oauth_redirect/" + token);
+    // res.redirect("/auth/oauth_redirect/" + token);
+    res.redirect(
+      "https://oauth.danielgrychtol.com/auth/oauth_redirect/" + token
+    );
   } catch (e) {
     console.log("error in handleOAuthRedirect");
     console.log(e);
