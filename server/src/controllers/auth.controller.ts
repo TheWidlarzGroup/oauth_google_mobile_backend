@@ -6,9 +6,16 @@ export const handleOAuthRedirect = (
   req: Express.Request,
   res: Express.Response
 ) => {
-  const token = generateJWTToken(req?.user?.id ?? "");
+  try {
+    const token = generateJWTToken(req?.user?.id ?? "");
 
-  res.redirect("/auth/oauth_redirect/" + token);
+    res.redirect("/auth/oauth_redirect/" + token);
+  } catch (e) {
+    console.log("error in handleOAuthRedirect");
+    console.log(e);
+
+    res.redirect("/auth/oauth_redirect/" + "errorToken");
+  }
 };
 
 export const oauthRedirect = (req: Express.Request, res: Express.Response) => {
