@@ -13,5 +13,6 @@ export const handleOAuthRedirect = (
 
 export const oauthRedirect = (req: Express.Request, res: Express.Response) => {
   res.setHeader("Content-Security-Policy", "script-src 'unsafe-inline';");
+  res.setHeader("Content-Type", "text/html");
   res.sendFile(path.join(__dirname, "../../../public", "oauth_redirect.html"));
 };
