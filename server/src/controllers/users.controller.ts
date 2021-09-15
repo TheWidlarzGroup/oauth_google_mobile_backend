@@ -32,8 +32,8 @@ export const createUser = async (
   try {
     const newUser = getRepository(User).create({
       email: "mail2@mail.com",
-      name: "JHohn DOe",
-      password_hash: "sdiof",
+      name: "John Doe",
+      password_hash: "MyStrongPassword!123",
     });
 
     const output = await getRepository(User).save(newUser);
