@@ -46,6 +46,13 @@ app.use(
 app.use("/api/users", UserRouter);
 app.use("/auth", AuthRouter);
 
+app.get(
+  "/account_confirm/:token",
+  (_req: Express.Request, res: Express.Response) => {
+    res.send("Account confirm fallback");
+  }
+);
+
 app.get("/", (_: Express.Request, res: Express.Response) => {
   res.sendFile(path.join(__dirname, "../public", "index.html"));
 });
