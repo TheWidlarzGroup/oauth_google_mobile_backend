@@ -39,4 +39,4 @@ To run PRODUCTION mode:
 
 ### Useful docker commands:
 
-https://github.com/danielmark0116/docker-commands -> we can move it to TWG also 😃
+https://github.com/danielmark0116/docker-commands
