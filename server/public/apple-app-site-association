@@ -4,7 +4,7 @@
     "details": [
       {
         "appIDs": [
-          "FS3AQFDB54.org.reactjs.native.example.WebCredentialsSetupDemo"
+          "FS3AQFDB54.app.twg.oauth"
         ],
         "components": [
           {
@@ -30,7 +30,7 @@
   },
   "webcredentials": {
     "apps": [
-      "FS3AQFDB54.org.reactjs.native.example.WebCredentialsSetupDemo"
+      "FS3AQFDB54.app.twg.oauth"
     ]
   }
 }
